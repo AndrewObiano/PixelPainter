@@ -1,8 +1,48 @@
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+#pixelPainter {
+}
+
 .pixel {
-  border: 0.3px black solid;
+  border: 0.3px rgba(0, 0, 0, 0.15) solid;
   height: 10px;
   width: 10px;
   display: inline-block;
+
+  /* DISABLE DRAGGING A PIXEL */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.palette {
+  border: 1px black solid;
+  height: 35px;
+  width: 35px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.colorCanvas {
+}
+
+.jscolor {
+  border: 1px black solid;
+  height: 38px;
+  width: 37px;
+  display: inline-block;
+  padding: 0px;
+}
+
+.operators {
+  margin-top: 20px;
+  display: grid;
+  place-items: center;
 }
 
 /* Shrink pixel sizes if window too small */
@@ -10,5 +50,12 @@
   .pixel {
     height: 8px !important;
     width: 8px !important;
+  }
+}
+
+@media only screen and (max-width: 447px) {
+  .pixel {
+    height: 5px !important;
+    width: 5px !important;
   }
 }
