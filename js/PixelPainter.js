@@ -1,6 +1,6 @@
 //RESOLUTION
-const width = 50;
-const height = 50;
+const width = 100;
+const height = 100;
 
 let mousedown = false;
 
@@ -26,7 +26,7 @@ for (x = 0; x < width; x++) {
     });
   }
 
-  let breakCanvas = document.createElement("BR");
+  let breakCanvas = document.createElement("br");
   canvas.appendChild(breakCanvas);
 } // End of creating grid
 

@@ -4,12 +4,16 @@ h1 {
 }
 
 #pixelPainter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .pixel {
   border: 0.3px rgba(0, 0, 0, 0.15) solid;
-  height: 10px;
-  width: 10px;
+  height: 5px;
+  width: 5px;
   display: inline-block;
 
   /* DISABLE DRAGGING A PIXEL */
@@ -29,6 +33,11 @@ h1 {
 }
 
 .colorCanvas {
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  transform: translateX(-50%) translateY(-50%);
+  white-space: nowrap;
 }
 
 .jscolor {
@@ -37,25 +46,27 @@ h1 {
   width: 37px;
   display: inline-block;
   padding: 0px;
+  margin-top: 20px;
 }
 
 .operators {
+  position: absolute;
   margin-top: 20px;
-  display: grid;
-  place-items: center;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 /* Shrink pixel sizes if window too small */
-@media only screen and (max-width: 546px) {
+@media only screen and (max-width: 630px) {
   .pixel {
-    height: 8px !important;
-    width: 8px !important;
+    height: 3px !important;
+    width: 3px !important;
   }
-}
-
-@media only screen and (max-width: 447px) {
-  .pixel {
-    height: 5px !important;
-    width: 5px !important;
+  .colorCanvas {
+    top: 60%;
+  }
+  .operators {
+    top: 65%;
   }
 }
