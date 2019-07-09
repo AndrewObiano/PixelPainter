@@ -6,8 +6,8 @@ let mousedown = false;
 
 // Create grid
 let canvas = document.getElementById("pixelPainter");
-for (x = 0; x < width; x++) {
-  for (y = 0; y < height; y++) {
+for (let x = 0; x < width; x++) {
+  for (let y = 0; y < height; y++) {
     let pixel = document.createElement("div");
     pixel.className = "pixel";
     canvas.appendChild(pixel);
@@ -47,7 +47,7 @@ const colors = [
 ];
 
 // Palette array
-for (x = 0; x < 8; x++) {
+for (let x = 0; x < 8; x++) {
   let palette = document.createElement("div");
   palette.className = "palette";
   colorCanvas.appendChild(palette);
@@ -76,28 +76,56 @@ customPalette.addEventListener("click", function() {
 
 // Operators
 const operators = document.createElement("div");
-const clearButton = document.createElement("button");
-const eraseButton = document.createElement("button");
+const clearButton = document.createElement("a");
+const eraseButton = document.createElement("a");
+const saveButton = document.createElement("a");
+const loadButton = document.createElement("a");
+let pixels = document.querySelectorAll(".pixel");
+let savedPix = [];
 
 operators.className = "operators";
 document.body.appendChild(operators);
 
 // clear
-clearButton.id = "clear";
+clearButton.href = "#"; // for button animation
+clearButton.className = "btn btn-white btn-animation-1";
 clearButton.innerHTML = "CLEAR";
 operators.appendChild(clearButton);
 clearButton.addEventListener("click", function() {
-  let pixels = document.querySelectorAll(".pixel");
-  for (i = 0; i < pixels.length; i++) {
-    pixels[i].style.backgroundColor = "transparent";
+  for (let i = 0; i < pixels.length; i++) {
+    pixels[i].style.backgroundColor = "white";
   }
 });
 
 // erase
-eraseButton.id = "erase";
+eraseButton.href = "#"; // for button animation
+eraseButton.className = "btn btn-white btn-animation-1";
 eraseButton.innerHTML = "ERASER";
 operators.appendChild(eraseButton);
 eraseButton.addEventListener("click", function() {
-  memory = "transparent";
+  memory = "white";
+});
+
+// save
+saveButton.href = "#"; // for button animation
+saveButton.className = "btn btn-white btn-animation-1";
+saveButton.innerHTML = "SAVE";
+operators.appendChild(saveButton);
+saveButton.addEventListener("click", function() {
+  for (let i = 0; i < pixels.length; i++) {
+    savedPix[i] = pixels[i].style.backgroundColor;
+    // savedPix.push(pixels[i].style.backgroundColor);
+  }
+});
+
+// load
+loadButton.href = "#"; // for button animation
+loadButton.className = "btn btn-white btn-animation-1";
+loadButton.innerHTML = "LOAD";
+operators.appendChild(loadButton);
+loadButton.addEventListener("click", function() {
+  for (let i = 0; i < pixels.length; i++) {
+    pixels[i].style.backgroundColor = savedPix[i];
+  }
 });
 // End of operators

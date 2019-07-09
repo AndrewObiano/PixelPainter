@@ -1,6 +1,13 @@
 h1 {
+  font-family: "Lato", sans-serif;
   font-size: 50px;
+  margin-top: 50px;
+  color: rgb(0, 0, 0);
   text-align: center;
+}
+
+body {
+  background-color: #616161;
 }
 
 #pixelPainter {
@@ -11,7 +18,8 @@ h1 {
 }
 
 .pixel {
-  border: 0.3px rgba(0, 0, 0, 0.15) solid;
+  background-color: rgb(255, 255, 255);
+  border: 0.2px rgba(0, 0, 0, 0.05) solid;
   height: 5px;
   width: 5px;
   display: inline-block;
@@ -49,13 +57,85 @@ h1 {
   margin-top: 20px;
 }
 
+/* BUTTONS */
 .operators {
   position: absolute;
   margin-top: 20px;
   left: 50%;
   top: 90%;
   transform: translateX(-50%) translateY(-50%);
+  white-space: nowrap;
 }
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  border-radius: 100px;
+  margin-left: 3px;
+  margin-right: 3px;
+  display: inline-block;
+  transition: all 0.5s;
+}
+
+.btn-white {
+  background: #fff;
+  color: #000;
+}
+
+.btn:hover {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-bottom-animation-1 {
+  animation: comeFromBottom 1s ease-out 0.8s;
+}
+
+.btn::after {
+  content: "";
+  text-decoration: none;
+  text-transform: uppercase;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 100px;
+  display: inline-block;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.btn-white::after {
+  background: #fff;
+}
+
+.btn-animation-1:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+@keyframes comeFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* END OF BUTTONS */
 
 /* Shrink pixel sizes if window too small */
 @media only screen and (max-width: 630px) {
