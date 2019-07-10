@@ -2,7 +2,11 @@
 const width = 100;
 const height = 100;
 
-let mousedown = false;
+// title stuff
+let title = document.getElementsByTagName("h1")[0];
+title.className = "title";
+
+let mousedown = false; // for painting event listeners
 
 // Create grid
 let canvas = document.getElementById("pixelPainter");
