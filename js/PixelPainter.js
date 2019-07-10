@@ -58,7 +58,7 @@ for (let x = 0; x < 8; x++) {
   });
 }
 
-// Add custom color block
+// Custom color block
 const customColor = document.createElement("script");
 customColor.src = "js/jscolor.js";
 document.body.appendChild(customColor);

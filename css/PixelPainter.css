@@ -1,9 +1,13 @@
 h1 {
-  font-family: "Lato", sans-serif;
+  font-family: sans-serif;
   font-size: 50px;
-  margin-top: 50px;
-  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 0.2em;
+  margin-top: 80px;
+  color: rgb(255, 255, 255);
   text-align: center;
+  opacity: 0;
+  animation: animate 1s ease-out forwards 0.5s;
 }
 
 body {
@@ -13,7 +17,8 @@ body {
 #pixelPainter {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
   white-space: nowrap;
 }
 
@@ -59,6 +64,7 @@ body {
 
 /* BUTTONS */
 .operators {
+  font-family: sans-serif;
   position: absolute;
   margin-top: 20px;
   left: 50%;
@@ -67,7 +73,7 @@ body {
   white-space: nowrap;
 }
 
-.btn:link,
+.btn:link, /* begin button animations */
 .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -123,7 +129,7 @@ body {
 .btn-animation-1:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
-}
+} /* end of button animations */
 
 @keyframes comeFromBottom {
   0% {
@@ -148,5 +154,16 @@ body {
   }
   .operators {
     top: 65%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    font-size: 55px;
+  }
+  100% {
+    opacity: 1;
+    font-size: 50px;
   }
 }
