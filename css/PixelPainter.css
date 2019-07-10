@@ -11,9 +11,13 @@
 
 body {
   background-color: #505050;
+  background-image: url("../../assets/pixelpaintbg.jpeg");
+  background-position: center;
+  background-size: cover;
   user-select: none;
 }
 
+/* GRID */
 #pixelPainter {
   opacity: 0;
   animation: fade 1s ease-out forwards 4s;
@@ -38,11 +42,17 @@ body {
   user-select: none;
 }
 
+/* END OF GRID */
+
+/* PAINT STUFF */
 .palette {
   border: 1px black solid;
   height: 35px;
   width: 35px;
   display: inline-block;
+  border-radius: 25px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
 }
 
 .colorCanvas {
@@ -61,7 +71,12 @@ body {
   width: 37px;
   display: inline-block;
   padding: 0px;
+  border-radius: 25px;
+  outline: 0;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
 }
+/* END OF PAINT STUFF */
 
 /* BUTTONS */
 .operators {
@@ -146,7 +161,7 @@ body {
 }
 /* END OF BUTTONS */
 
-/* Shrink pixel sizes if window too small */
+/* Refitting if window too small */
 @media only screen and (max-width: 630px) {
   .pixel {
     height: 4px !important;
@@ -174,7 +189,9 @@ body {
     white-space: normal;
   }
 }
+/* End of refitting stuff */
 
+/* Animations */
 @keyframes animate {
   0% {
     opacity: 0;
@@ -214,3 +231,4 @@ body {
     opacity: 1;
   }
 }
+/* End of animations */

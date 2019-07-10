@@ -58,7 +58,6 @@ for (let x = 0; x < 8; x++) {
   palette.style.backgroundColor = colors[x];
   palette.addEventListener("click", function() {
     memory = this.style.backgroundColor;
-    console.log(memory);
   });
 }
 
@@ -78,7 +77,7 @@ customPalette.addEventListener("click", function() {
 
 // END COLOR PALETTE
 
-// Operators
+// Begin operators
 const operators = document.createElement("div");
 const clearButton = document.createElement("a");
 const eraseButton = document.createElement("a");
@@ -118,7 +117,6 @@ operators.appendChild(saveButton);
 saveButton.addEventListener("click", function() {
   for (let i = 0; i < pixels.length; i++) {
     savedPix[i] = pixels[i].style.backgroundColor;
-    // savedPix.push(pixels[i].style.backgroundColor);
   }
 });
 
@@ -132,4 +130,5 @@ loadButton.addEventListener("click", function() {
     pixels[i].style.backgroundColor = savedPix[i];
   }
 });
+
 // End of operators
