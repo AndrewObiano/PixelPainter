@@ -26,6 +26,9 @@ body {
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
   white-space: nowrap;
+  -webkit-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
 }
 
 .pixel {
@@ -53,6 +56,9 @@ body {
   border-radius: 25px;
   margin-left: 1.5px;
   margin-right: 1.5px;
+  -webkit-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
 }
 
 .colorCanvas {
@@ -75,6 +81,9 @@ body {
   outline: 0;
   margin-left: 1.5px;
   margin-right: 1.5px;
+  -webkit-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
 }
 /* END OF PAINT STUFF */
 
