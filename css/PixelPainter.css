@@ -1,0 +1,243 @@
+.title {
+  font-family: sans-serif;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px #000;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  animation: animate 3s ease-in-out forwards 0.5s;
+}
+
+body {
+  background-color: #505050;
+  background-image: url("../../assets/pixelpaintbg.jpeg");
+  background-position: center;
+  background-size: cover;
+  user-select: none;
+}
+
+/* GRID */
+#pixelPainter {
+  opacity: 0;
+  animation: fade 1s ease-out forwards 4s;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  white-space: nowrap;
+  -webkit-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+}
+
+.pixel {
+  background-color: rgb(255, 255, 255);
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+
+  /* DISABLE DRAGGING A PIXEL */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* END OF GRID */
+
+/* PAINT STUFF */
+.palette {
+  border: 1px black solid;
+  height: 35px;
+  width: 35px;
+  display: inline-block;
+  border-radius: 25px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
+  -webkit-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+}
+
+.colorCanvas {
+  opacity: 0;
+  animation: fade 1s ease-out forwards 4.25s;
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  transform: translateX(-50%) translateY(-50%);
+  white-space: nowrap;
+}
+
+.jscolor {
+  border: 1px black solid;
+  height: 38px;
+  width: 37px;
+  display: inline-block;
+  padding: 0px;
+  border-radius: 25px;
+  outline: 0;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
+  -webkit-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 13px 15px -8px rgba(0, 0, 0, 0.75);
+}
+/* END OF PAINT STUFF */
+
+/* BUTTONS */
+.operators {
+  opacity: 0;
+  animation: fade 1s ease-out forwards 4.5s;
+  font-family: sans-serif;
+  position: absolute;
+  margin-top: 20px;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%) translateY(-50%);
+  white-space: nowrap;
+}
+
+.btn:link, /* begin button animations */
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  border-radius: 100px;
+  margin-left: 3px;
+  margin-right: 3px;
+  display: inline-block;
+  transition: all 0.5s;
+}
+
+.btn-white {
+  background: #fff;
+  color: #000;
+}
+
+.btn:hover {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-bottom-animation-1 {
+  animation: comeFromBottom 1s ease-out 0.8s;
+}
+
+.btn::after {
+  content: "";
+  text-decoration: none;
+  text-transform: uppercase;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 100px;
+  display: inline-block;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.btn-white::after {
+  background: #fff;
+}
+
+.btn-animation-1:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+} /* end of button animations */
+
+@keyframes comeFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* END OF BUTTONS */
+
+/* Refitting if window too small */
+@media only screen and (max-width: 630px) {
+  .pixel {
+    height: 4px !important;
+    width: 4px !important;
+  }
+  .colorCanvas {
+    top: 60%;
+  }
+  .operators {
+    top: 65%;
+  }
+  .colorCanvas {
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%) translateY(-80%);
+  }
+  .operators {
+    left: 50%;
+    top: 83%;
+    transform: translateX(-50%) translateY(-83%);
+  }
+  .title {
+    font-size: 30px;
+    text-align: center;
+    white-space: normal;
+  }
+}
+/* End of refitting stuff */
+
+/* Animations */
+@keyframes animate {
+  0% {
+    opacity: 0;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  20% {
+    opacity: 1;
+    font-size: 90px;
+  }
+  50% {
+    opacity: 1;
+    font-size: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    font-size: 50px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20%);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* End of animations */
