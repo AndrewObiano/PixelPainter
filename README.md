@@ -1,3 +1,5 @@
+To view, run `live-server` in the root directory.
+
 PixelPainter
 ============
 
